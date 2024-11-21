@@ -70,7 +70,7 @@ console.log(cevre);
 function CemberinAlani(r, pi) {
   return pi * r * r;
 }
-
+console.log(CemberinAlani(15));
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
 /* 	GÖREV 3:
@@ -102,27 +102,61 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+let enBuyuk = [0];
+let enKucuk = [0];
+for (let i = 0; i < sayilar.length; i++) {
+  if(sayilar[i] < enKucuk) {
+    enKucuk = sayilar[i];
+  } 
+  if(sayilar[i] > enBuyuk) {
+    enBuyuk = sayilar[i];
+  }
+  } 
 
 // 3b çözümü:
 
-/* kodlar buraya */
+let uceTamBolunenler = [];
+sayilar.forEach(sayi => {
+  if (sayi % 3 === 0) {
+    uceTamBolunenler.push(sayi);
+  }
+});
+console.log(uceTamBolunenler);
 
 // 3c çözümü:
 
-/* kodlar buraya */
+const uceBolunenlerinToplami = uceTamBolunenler.reduce((toplam, sayi) => {
+  toplam + sayi,0
+})
+console.log(uceBolunenlerinToplami);
 
 // 3d çözümü
 
-/* kodlar buraya */
+let besYuzdenKucukSayilar = sayilar.filter(sayi => sayi < 500);
+console.log(besyuzdenkucuksayilar);
 
 // 3e çözümü
 
-/* kodlar buraya */
+let siraliSayilar = besyuzdenkucuksayilar.sort((a,b) => a - b);
+console.log(siraliSayilar);
 
 // 3f çözümü
 
-/* kodlar buraya */
+let tekrarSayilari = {};
+let tekrarEdenSayilar = [];
+sayilar.forEach(sayi => {
+  if(tekrarSayilari[sayi]) {
+    tekrarSayilari[sayi] += 1;
+  } else {
+    tekrarSayilari[sayi] = 1;
+  }
+});
+for (let sayi in tekrarSayilari) {
+  if(tekrarSayilari[sayi] > 1) {
+    tekrarEdenSayilar.push(`${sayi} sayısı ${tekrarSayilari[sayi]} kere tekrar edilmiştir`);
+  }
+}
+console.log(tekrarEdenSayilar);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
